@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: cash_env
+  username: postgres
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: cash_test
+  username: postgres
+
