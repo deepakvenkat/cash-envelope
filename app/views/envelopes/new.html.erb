@@ -1,0 +1,11 @@
+<div class='container envelopes'>
+  <%= form_for @envelope  do |f| %>
+    <%= f.label :name %>
+    <%=  f.text_field :name %>
+    <br/>
+    <%= f.label :limit %>
+    <%=  f.text_field :limit %>
+    <br/>
+    <%= f.submit 'Create' %>
+  <% end %>
+</div>

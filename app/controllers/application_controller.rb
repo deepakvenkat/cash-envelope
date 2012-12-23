@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def after_sign_in_path_for(resource)
-    users_path
+    '/users/'+current_user.id.to_s
   end
 
   def authenticate_user!(opts={})
