@@ -1,0 +1,9 @@
+<p> Welcome </p>
+
+<%= form_for @user, url: { action: :update } do |f| %>
+  <%= f.text_field :first_name %>
+  <br/>
+  <%= f.text_field :last_name %>
+  <br/>
+  <%= f.submit 'Update' %>  
+<% end %>
