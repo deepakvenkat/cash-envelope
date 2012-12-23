@@ -1,6 +1,6 @@
 <p> Welcome </p>
 
-<%= form_for @user, url: { action: :update } do |f| %>
+<%= form_for current_user do |f| %>
   <%= f.text_field :first_name %>
   <br/>
   <%= f.text_field :last_name %>

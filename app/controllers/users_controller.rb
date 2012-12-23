@@ -1,12 +1,17 @@
 class UsersController < ApplicationController
 
+  before_filter :authenticate_user!
   def show
-    authenticate_user!
     @user = current_user
   end
 
   def update
-    current_user.update_attributes(params[:user])
-    render nothing: true
+    @user = current_user
+    if @user.update_attributes!(params[:user])
+      flash[:alert] = "Updated"
+    else
+      flash[:error] = @user.errors
+    end
+    redirect_to user_path
   end
 end
