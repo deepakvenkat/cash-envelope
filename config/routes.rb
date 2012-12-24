@@ -4,4 +4,5 @@ CashEnvelope::Application.routes.draw do
   root to: 'high_voltage/pages#show', id: 'home'
   resources :users, only: [:show, :update]
   resources :envelopes
+  resources :transactions
 end

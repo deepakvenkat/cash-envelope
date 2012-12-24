@@ -1,0 +1,18 @@
+<table class='transactions'>
+  <tr>
+    <th>Name </th>
+    <th>Envelope name </th>
+    <th>Date Spent </th>
+    <th>Amount </th>
+    <th>Actions </th>
+  </tr>
+  <% @transactions.each do |transaction| %>
+    <tr>
+      <td> <%= transaction.name %></td>
+      <td> <%= transaction.envelope.name %></td>
+      <td> <%= transaction.date_spent %></td>
+      <td> <%= transaction.amount %></td>
+      <td> <%= link_to('Edit', edit_transaction_path(transaction)), link_to('Delete', transaction_path(transaction), method: :delete) %></td>
+    </tr>
+  <% end %>
+</table>

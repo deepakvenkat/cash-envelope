@@ -7,6 +7,9 @@
       <th>Limit </th>
       <th>Days left </th>
       <th>Actions </th>
+      <th>Add Transactions </th>
+      <th>View transactions </th>
+      <th> Refresh </th>
     </tr>
     <% @envelopes.each do |envelope| %>
       <tr>
@@ -15,7 +18,9 @@
         <td><%= envelope.limit %></td>
         <td><%= days_left %></td>
         <td><%= link_to 'Edit', edit_envelope_path(envelope) %>, <%= link_to 'Delete', envelope_path(envelope), method: :delete %></td>
-        <td><%= link_to 'Add transactions', '#' %> </td>
+        <td><%= link_to 'Add transactions', new_transaction_path(envelope: envelope.id) %> </td>
+        <td><%= link_to('This month', transactions_path(envelope: envelope.id, this_month: true)) %>, <%= link_to('All', transactions_path(envelope: envelope.id, this_month: false))  %></td>
+        <td><%= link_to('Refresh', edit_envelope_path(envelope, refresh: true)) %>
       </tr>
     <% end %>
   </ul>

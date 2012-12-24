@@ -1,0 +1,14 @@
+<h2>Create a transaction for <%= @transaction.envelope.name %> </h1>
+
+<%= form_for @transaction do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br/>
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+  <%= f.hidden_field :envelope_id, value: @envelope.id %>
+  <br/>
+  <%= f.submit 'Add' %>
+<% end %>
+
+
