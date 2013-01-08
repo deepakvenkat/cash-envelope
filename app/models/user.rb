@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
   has_many :envelopes
   has_many :expenses
   has_many :transactions, through: :envelopes
+  has_many :old_savings
+
+  def remaining
+    envelopes.sum(:limit).to_f - envelopes.sum(:balance).to_f
+  end
 end
