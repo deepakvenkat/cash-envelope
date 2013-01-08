@@ -1,0 +1,14 @@
+<div class='container expenses'>
+  <%= form_for @expense  do |f| %>
+    <%= f.label :name %>
+    <%=  f.text_field :name %>
+    <br/>
+    <%= f.label :amount %>
+    <%=  f.text_field :amount %>
+    <br/>
+    <%= f.label :date_due %>
+    <%=  f.text_field :date_due %>
+    <br/>
+    <%= f.submit 'Create' %>
+  <% end %>
+</div>

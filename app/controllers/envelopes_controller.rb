@@ -40,4 +40,16 @@ class EnvelopesController < ApplicationController
     end
     redirect_to envelopes_path
   end
+
+  def refresh
+    @envelope = current_user.envelopes.find(params[:id])
+    @envelope.refresh_balance
+  end
+
+  def refresh_all
+    @envelopes = current_user.envelopes
+    @envelopes.each do |envelope|
+      envelope.refresh_balance
+    end
+  end
 end
