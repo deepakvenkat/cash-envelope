@@ -15,7 +15,4 @@ class Envelope < ActiveRecord::Base
   	self.save!
   end
 
-  def remaining
-    sum(:limit).to_f - sum(:balance).to_f
-  end
 end
