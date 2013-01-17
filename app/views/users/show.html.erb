@@ -15,12 +15,13 @@
   <%= f.label 'Income' %>
   <%= f.text_field :income %>
   <br/>
-  <%= f.submit 'Update' %>  
+  <%= f.submit 'Update' %>
 <% end %>
 
 <br/><br/>
 <div class = 'container'>
 This month's balance: <%= number_to_currency(current_user.remaining) %>
-
+<br/><br/>
+This month's possible savings: <%= number_to_currency(current_user.savings) %>
 </div>
 

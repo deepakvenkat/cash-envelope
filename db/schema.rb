@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130108213827) do
+ActiveRecord::Schema.define(:version => 20130117221613) do
 
   create_table "envelopes", :force => true do |t|
     t.integer  "user_id"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(:version => 20130108213827) do
     t.integer  "envelope_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "unusual_expenses", :force => true do |t|
+    t.string   "name"
+    t.decimal  "amount"
+    t.date     "date_incurred"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|

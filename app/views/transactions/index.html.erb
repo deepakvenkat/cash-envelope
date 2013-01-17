@@ -12,7 +12,7 @@
       <td> <%= transaction.envelope.name %></td>
       <td> <%= transaction.date_spent %></td>
       <td> <%= transaction.amount %></td>
-      <td> <%= link_to('Edit', edit_transaction_path(transaction)), link_to('Delete', transaction_path(transaction), method: :delete) %></td>
+      <td> <%= link_to('Edit', edit_transaction_path(transaction), link_to('Delete', transaction_path(transaction), method: :delete)) %></td>
     </tr>
   <% end %>
 </table>

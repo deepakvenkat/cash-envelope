@@ -7,8 +7,15 @@ class User < ActiveRecord::Base
   has_many :expenses
   has_many :transactions, through: :envelopes
   has_many :old_savings
+  has_many :unusual_expenses
 
   def remaining
     envelopes.sum(:limit).to_f - envelopes.sum(:balance).to_f
+  end
+
+  def savings
+  	envelopes_sum = envelopes.collect {|e| e.balance.abs}.sum.to_f
+  	expenses_sum = expenses.sum(:amount).to_f
+  	income - (envelopes_sum + expenses_sum)
   end
 end
