@@ -44,6 +44,7 @@ class EnvelopesController < ApplicationController
   def refresh
     @envelope = current_user.envelopes.find(params[:id])
     @envelope.refresh_balance
+    redirect_to envelopes_path
   end
 
   def refresh_all
@@ -51,5 +52,7 @@ class EnvelopesController < ApplicationController
     @envelopes.each do |envelope|
       envelope.refresh_balance
     end
+    Rails.logger.info "in here"
+    redirect_to envelopes_path
   end
 end

@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :unusual_expenses
 
   def remaining
-    envelopes.sum(:limit).to_f - envelopes.sum(:balance).to_f
+    envelopes.sum(:balance).to_f
   end
 
   def savings
