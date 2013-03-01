@@ -1,6 +1,6 @@
 <div class='container expenses'>
   <h2>Your Expenses </h2>
-  <table id='envelopes-list'>
+  <table id='envelopes-list' class='table'>
     <tr>
       <th>Name </th>
       <th>Amount </th>
@@ -14,10 +14,13 @@
         <td><%= expense.amount %></td>
         <td><%= expense.date_due %></td>
         <td><%= link_to 'Edit', edit_expense_path(expense) %>, <%= link_to 'Delete', envelope_path(expense), method: :delete %></td>
+        <td><input type="checkbox"></td>
       </tr>
     <% end %>
   </ul>
+</div>
 
+<div class="breadcrumb">
   <%= link_to('Create a new expense', new_expense_path) %>
   <%= link_to('Home', user_path(current_user)) %>
 </div>

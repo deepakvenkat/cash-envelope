@@ -11,6 +11,7 @@ gem 'high_voltage'
 gem 'devise'
 group :assets do
   gem 'uglifier', '>= 1.0.3'
+  gem 'therubyracer'
   gem 'less-rails-bootstrap'
 end
 

@@ -1,16 +1,24 @@
+<h2>Your Envelopes </h2>
+
+<div class="nav breadcrumb">
+  <%= link_to('Refresh all envelopes', refresh_all_envelopes_path) %>
+  <%= link_to('Create a new envelope', new_envelope_path) %>
+  <%= link_to('Home', user_path(current_user)) %>
+</div>
 <div class='container envelopes'>
-  <h2>Your Envelopes </h2>
-  <table id='envelopes-list'>
-    <tr>
-      <th>Name </th>
-      <th>Balance </th>
-      <th>Limit </th>
-      <th>Days left </th>
-      <th>Actions </th>
-      <th>Add Transactions </th>
-      <th>View transactions </th>
-      <th> Refresh </th>
-    </tr>
+  <table id='envelopes-list' class='table'>
+    <thead>
+      <tr>
+        <th>Name </th>
+        <th>Balance </th>
+        <th>Limit </th>
+        <th>Days left </th>
+        <th>Actions </th>
+        <th>Add Transactions </th>
+        <th>View transactions </th>
+        <th> Refresh </th>
+      </tr>
+  </thead>
     <% @envelopes.each do |envelope| %>
       <tr>
         <td><%= envelope.name %></td>
@@ -24,7 +32,6 @@
       </tr>
     <% end %>
   </ul>
-  <%= link_to('Refresh all envelopes', refresh_all_envelopes_path) %>
-  <%= link_to('Create a new envelope', new_envelope_path) %>
-  <%= link_to('Home', user_path(current_user)) %>
 </div>
+
+<div class>

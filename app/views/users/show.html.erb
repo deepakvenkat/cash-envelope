@@ -1,23 +1,26 @@
-<p> Welcome </p>
-<div class='nav'>
-	<%= link_to 'Envelopes', envelopes_path %>
-	<%= link_to 'Expenses', expenses_path %>
-	<%=  link_to 'Logout', destroy_user_session_path, method: :delete %>
-</div>
+<header>
+  <h2> Welcome </h2>
+  <div class='nav'>
+  	<%= link_to 'Envelopes', envelopes_path %>
+  	<%= link_to 'Expenses', expenses_path %>
+  	<%=  link_to 'Logout', destroy_user_session_path, method: :delete %>
+  </div>
+</header>
 <br/><br/>
-<%= form_for current_user do |f| %>
-	<%= f.label 'First Name' %>
-  <%= f.text_field :first_name %>
-  <br/>
-  <%= f.label 'Last Name' %>
-  <%= f.text_field :last_name %>
-  <br/>
-  <%= f.label 'Income' %>
-  <%= f.text_field :income %>
-  <br/>
-  <%= f.submit 'Update' %>
-<% end %>
-
+<div class='container'>
+  <%= form_for current_user do |f| %>
+  	<%= f.label 'First Name' %>
+    <%= f.text_field :first_name %>
+    <br/>
+    <%= f.label 'Last Name' %>
+    <%= f.text_field :last_name %>
+    <br/>
+    <%= f.label 'Income' %>
+    <%= f.text_field :income %>
+    <br/>
+    <%= f.submit 'Update' %>
+  <% end %>
+<div>
 <br/><br/>
 <div class = 'container'>
 This month's balance: <%= number_to_currency(current_user.remaining) %>

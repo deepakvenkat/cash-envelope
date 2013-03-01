@@ -1,6 +1,7 @@
 class EnvelopesController < ApplicationController
 
   before_filter :authenticate_user!
+
   def index
     @envelopes = current_user.envelopes
   end
