@@ -10,7 +10,7 @@ class Envelope < ActiveRecord::Base
     self.save!
   end
 
-  def self.refresh_balance
+  def refresh_balance
   	self.balance = self.limit
   	self.save!
   end

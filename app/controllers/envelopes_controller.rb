@@ -49,11 +49,12 @@ class EnvelopesController < ApplicationController
   end
 
   def refresh_all
+    Rails.logger.info "in here"
+
     @envelopes = current_user.envelopes
     @envelopes.each do |envelope|
       envelope.refresh_balance
     end
-    Rails.logger.info "in here"
     redirect_to envelopes_path
   end
 end
