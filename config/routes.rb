@@ -7,6 +7,6 @@ CashEnvelope::Application.routes.draw do
   resources :transactions
   resources :expenses
   resources :unusual_expenses
-  get "envelopes/refresh/:id" => "envelopes#refresh", as: "refresh_envelope"
-  get "envelopes/refresh_all" => "envelopes#refresh_all", as: "refresh_all_envelopes"
+  get "envelope/refresh/:id" => "envelopes#refresh", as: "refresh_envelope"
+  get "envelope/refresh_all" => "envelopes#refresh_all", as: "refresh_all_envelopes"
 end

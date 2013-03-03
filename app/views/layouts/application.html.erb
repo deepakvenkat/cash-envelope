@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CashEnvelope</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<p class="error"><%= flash[:error] %></p>
-<%= yield %>
-
-</body>
+	<head>
+	  <title>CashEnvelope</title>
+	   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body class="container">
+		<% if flash[:notice] %>
+			<p class="notice"><%= flash[:notice] %></p>
+		<% end %>
+		<% if flash[:alert] %>
+			<p class="alert"><%= alert %></p>
+		<% end %>
+		<% if flash[:error] %>
+			<p class="error"><%= flash[:error] %></p>
+		<%end%>
+		<%= yield %>
+	</body>
 </html>
